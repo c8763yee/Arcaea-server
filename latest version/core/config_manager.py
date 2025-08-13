@@ -107,6 +107,8 @@ class Config:
     GAME_REGISTER_DEVICE_RATE_LIMIT = '3/1 day'
 
     NOTIFICATION_EXPIRE_TIME = 3 * 60 * 1000
+    
+    VOICE_AVAILABLE_CHARACTER_ID = (21, 46)
 
 
 class ConfigManager:

@@ -210,6 +210,10 @@ def pre_main():
 
 
 def main():
+    # 警告用戶Arcaea在處理角色ID小於10的語音時會閃退
+    if any(cid < 10 for cid in Config.VOICE_AVAILABLE_CHARACTER_ID):
+        app.logger.warning("Enabling voice for characters with ID less than 10 may cause Arcaea client crashes. So use it at your own risk.")
+
     if Config.LINKPLAY_HOST and Config.SET_LINKPLAY_SERVER_AS_SUB_PROCESS:
         from linkplay_server import link_play
         process = [Process(target=link_play, args=(

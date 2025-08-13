@@ -296,7 +296,7 @@ class UserCharacter(Character):
 
         self.skill_flag = y[6] == 1
 
-        if self.character_id in (21, 46):
+        if self.character_id in Config.VOICE_AVAILABLE_CHARACTER_ID:
             self.voice = [0, 1, 2, 3, 100, 1000, 1001]
 
         if self.character_id == 55:
